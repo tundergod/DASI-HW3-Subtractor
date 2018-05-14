@@ -14,7 +14,7 @@ class colors:
     fail = '\033[91m'
     close = '\033[0m'
 
-TRAINING_SIZE = 10000
+TRAINING_SIZE = 100000
 DIGITS = 3
 REVERSE = False
 MAXLEN = DIGITS + 1 + DIGITS
@@ -102,10 +102,10 @@ x = x[indices]
 y = y[indices]
 
 # train_test_split
-train_x = x[:8000]
-train_y = y[:8000]
-test_x = x[8000:]
-test_y = y[8000:]
+train_x = x[:80000]
+train_y = y[:80000]
+test_x = x[80000:]
+test_y = y[80000:]
 
 split_at = len(train_x) - len(train_x) // 10
 (x_train, x_val) = train_x[:split_at], train_x[split_at:]
