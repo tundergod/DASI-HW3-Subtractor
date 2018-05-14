@@ -188,4 +188,3 @@ for i in range(len(preds)):
         print(colors.fail + '☒' + colors.close, end=' ')
     print(guess)
 print("MSG : Accuracy is {}".format(right / len(preds)))
-
