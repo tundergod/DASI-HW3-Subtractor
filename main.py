@@ -62,6 +62,7 @@ while len(questions) < TRAINING_SIZE:
         continue
     seen.add(key)
 
+    c = 0
     if a < b:
         c = a
         a = b
@@ -70,22 +71,19 @@ while len(questions) < TRAINING_SIZE:
     if randint(0,1) == 0:
         q = '{}+{}'.format(a, b)
         ans = str(a + b)
-        c1 = c1 + 1
     else:
         q = '{}-{}'.format(a, b)
         ans = str(a - b)
-        c2 = c2 + 1
         
     query = q + ' ' * (MAXLEN - len(q))
     ans += ' ' * (DIGITS + 1 - len(ans))
     
     questions.append(query)
     expected.append(ans)
+
 print('Total addition questions:', len(questions))
 
 print(questions[:10], expected[:10])
-print('+ case = ', c1)
-print('- case = ', c2)
 
 # Processing
 print('Vectorization...')
